@@ -1,10 +1,12 @@
 # This repository will help you ingest raw data into snowflake from csv files hosted in azure blob.
 
 As a pre-requisite , we have to create the following:
+
 **1. A database in snowflake**
 create database customers;
 
-2. Storage integration in snowflake
+**2. Storage integration in snowflake**
+
 CREATE STORAGE INTEGRATION azure_int
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = 'AZURE'
@@ -22,7 +24,7 @@ CREATE STORAGE INTEGRATION azure_int
     'azure://databricksazure.blob.core.windows.net/databricksazure/',
     'test.csv', 'all')
     
-3. Create file formats in snowflake. There are 2 file formats created, one(csv_format_inferschema) which will be used to infer the schema of the csv file in azure blob, and the other file format(csv_format_fieload) for data ingestion into snowflake
+**3. Create file formats in snowflake. There are 2 file formats created, one(csv_format_inferschema) which will be used to infer the schema of the csv file in azure blob, and the other file format(csv_format_fieload) for data ingestion into snowflake**
    
 CREATE or replace FILE FORMAT csv_format_inferschema 
   TYPE = 'CSV' 
@@ -39,7 +41,7 @@ CREATE or replace FILE FORMAT csv_format_fieload
   ;  
 
 
-4. Create a stage in snowflake
+**4. Create a stage in snowflake**
 
 CREATE or replace STAGE azure_stage
   STORAGE_INTEGRATION = azure_int
@@ -47,8 +49,8 @@ CREATE or replace STAGE azure_stage
   FILE_FORMAT = csv_format_inferschema;
 
 
-5. Create an event table in snowflake. This will capture all the telemetry data in snowflake
-USE SCHEMA customers.public;
+**5. Create an event table in snowflake. This will capture all the telemetry data in snowflake
+USE SCHEMA customers.public;**
 
 CREATE EVENT TABLE customers.public.azure_fileingestion_events;
 
