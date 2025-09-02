@@ -50,8 +50,9 @@ CREATE or replace STAGE azure_stage
   FILE_FORMAT = csv_format_inferschema;
 
 
-**5. Create an event table in snowflake. This will capture all the telemetry data in snowflake
-USE SCHEMA customers.public;**
+**5. Create an event table in snowflake. This will capture all the telemetry data in snowflake**
+
+USE SCHEMA customers.public;
 
 CREATE EVENT TABLE customers.public.azure_fileingestion_events;
 
