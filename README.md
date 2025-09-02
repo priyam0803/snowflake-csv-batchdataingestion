@@ -38,11 +38,14 @@ CREATE or replace FILE FORMAT csv_format_fieload
   skip_header = 1;
   ;  
 
+
 4. Create a stage in snowflake
+
 CREATE or replace STAGE azure_stage
   STORAGE_INTEGRATION = azure_int
   URL = 'azure://databricksazure.blob.core.windows.net/databricksazure/'
-  FILE_FORMAT = csv_format_inferschema; 
+  FILE_FORMAT = csv_format_inferschema;
+
 
 5. Create an event table in snowflake. This will capture all the telemetry data in snowflake
 USE SCHEMA customers.public;
