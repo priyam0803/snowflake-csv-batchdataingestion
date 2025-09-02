@@ -2,11 +2,11 @@
 
 As a pre-requisite , we have to create the following:
 
-**1. A database in snowflake**
+**1. Create a database in snowflake**
 
 CREATE DATABASE customers;
 
-**2. Storage integration in snowflake**
+**2. Create a Storage integration in snowflake**
 
 CREATE STORAGE INTEGRATION azure_int
   TYPE = EXTERNAL_STAGE
