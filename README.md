@@ -11,3 +11,5 @@ This framework will perform the following activites for ingesting data into snow
 4.Data ingestion into snowflake tables from the files 
 
 
+
+
