@@ -1,7 +1,7 @@
 # This repository will help you ingest raw data into snowflake from csv files hosted in azure blob.
 
 As a pre-requisite , we have to create the following:
-1. A database in snowflake
+**1. A database in snowflake**
 create database customers;
 
 2. Storage integration in snowflake
