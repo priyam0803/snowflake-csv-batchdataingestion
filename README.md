@@ -16,9 +16,11 @@ CREATE STORAGE INTEGRATION azure_int
   STORAGE_ALLOWED_LOCATIONS = ('azure://databricksazure.blob.core.windows.net/databricksazure/');;
 
   DESCRIBE INTEGRATION azure_int;
+  
   SHOW STORAGE INTEGRATIONS;
   
   --VALIDATE STORAGE INT
+  
   SELECT
   SYSTEM$VALIDATE_STORAGE_INTEGRATION(
     'AZURE_INT',
