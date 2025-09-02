@@ -23,6 +23,7 @@ CREATE STORAGE INTEGRATION azure_int
     'test.csv', 'all')
     
 3. Create file formats in snowflake. There are 2 file formats created, one(csv_format_inferschema) which will be used to infer the schema of the csv file in azure blob, and the other file format(csv_format_fieload) for data ingestion into snowflake
+   
 CREATE or replace FILE FORMAT csv_format_inferschema 
   TYPE = 'CSV' 
   FIELD_DELIMITER = ',' 
