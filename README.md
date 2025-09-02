@@ -3,7 +3,8 @@
 As a pre-requisite , we have to create the following:
 
 **1. A database in snowflake**
-create database customers;
+
+CREATE DATABASE customers;
 
 **2. Storage integration in snowflake**
 
