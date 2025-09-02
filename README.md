@@ -1,6 +1,6 @@
 # This repository will help you ingest raw data into snowflake from csv files hosted in azure blob.
 
-**This framework will perform the following activites for ingesting data into snowflake from csv files in azure blob.**
+**1.This framework will perform the following activites for ingesting data into snowflake from csv files in azure blob.**
 
 1.Schema inference of the csv files in azure blob using INFER_SCHEMA()
 
@@ -10,7 +10,7 @@
 
 4.Data ingestion into snowflake tables from the files 
 
-**Following are the list of stored procs in the framework:**
+**2.Following are the list of stored procs in the framework:**
 
 GENERATE_CLEAN_DDL : This will infer the schema of the files in azure blob. The inferred schema will be stored in a transient table. Using this inferred schema table , ddl is created and stored in a ddl_details table.
 Impacted tables:ddl_details
