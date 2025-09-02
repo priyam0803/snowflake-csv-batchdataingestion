@@ -9,3 +9,5 @@ This framework will perform the following activites for ingesting data into snow
 3.Table creation based on the DDL in #2
 
 4.Data ingestion into snowflake tables from the files 
+
+
