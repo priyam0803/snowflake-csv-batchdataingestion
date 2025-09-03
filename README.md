@@ -10,7 +10,23 @@ c.  Table creation based on the DDL in #b
 
 d.  Data ingestion into snowflake tables from the files 
 
-**2.Following are the list of stored procs in the framework:**
+**2.Following are the list of tables used in the framework:**
+
+a.  source_filelist_config : This table contains the details about the file we want to ingest and the table details e.g stage name, file name, file formats, target table details, config table details. This table contains 2 flags:
+
+DDL_GENERATE_FLAG - To denote if the DDL needs to be created by inferring the schema of the flag. e.g (Y/N)
+
+ACTIVE_FLAG - To denote if the entry is active or not. e.g (Y/N)
+
+b.  ddl_details : This table contains the ddl generated for the table. This table contains 2 flags: 
+
+ACTIVE_FLAG - To denote if the entry is active or not. e.g (Y/N). When re-creating the DDL for the same table, the previous entry is invalidated as 'N'. 
+
+TABLE_CREATED_FLAG - To denote if the target table is created using the DDL. e.g (Y/N). When Y, then the table is not created using the DDL
+
+c.  audit_table_inbound_feed : This is an audit table which captures the ingestion stats for the files ingested.
+
+**3.Following are the list of stored procs in the framework:**
 
 a.  GENERATE_CLEAN_DDL : This will infer the schema of the files in azure blob. The inferred schema will be stored in a transient table. Using this inferred schema table , ddl is created and stored in a ddl_details table.
 
